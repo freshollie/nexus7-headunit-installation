@@ -39,8 +39,7 @@ TO_DISABLE = [
     "jp.co.omronsoft.iwnnime.ml",
     "com.google.android.play.games",
     "com.google.android.apps.magazines",
-    "com.google.android.GoogleCamera",
-    "com.android.launcher"
+    "com.google.android.GoogleCamera"
 ]
 
 # headunit tool
@@ -93,6 +92,10 @@ def adb_boot_recovery():
     os.system("adb reboot recovery")
 
 
+def adb_wait_for_device():
+    os.system("adb wait-for-device")
+
+
 def flash_recovery():
     os.system("sudo fastboot flash recovery recovery/twrp-3.1.1-0-flo.img")
 
@@ -121,26 +124,33 @@ def fresh_installation_wizard():
     raw_input("Installation complete, please follow device installation process, enable developer tools, and press enter when complete")
     print("Copying files to device")
     add_required_files()
-    
+
+
     print("Flashing recovery")
     adb_boot_bootloader()
     flash_recovery()
-    
+    fastboot_boot_recovery()
+
+    adb_wait_for_device()
     print("Flashing timurs kernel")
     flash_timurs_kernel()
     adb_boot_system()
     print("Flash complete")
     raw_input("Press enter when os booted")
+
     
     print("Starting software install")
     disable_packages()
+
     install_packages()
     disable_volume_warning()
     adb_boot_system()
+
     
-    os.system("adb shell ls")
-    raw_input("Ok, to finish installation: Restore nova launcher backup, set your PEM settings, set device sleep to None in developer options, enable rotation lock")
+    adb_wait_for_device()
+    raw_input("Ok, to finish installation: Restore nova launcher backup, set your PEM settings, set device sleep to None in developer options, disable lock screen, turn off notifications, enable rotation lock")
 
 
 #install_packages()
 fresh_installation_wizard()
+#disable_packages()
