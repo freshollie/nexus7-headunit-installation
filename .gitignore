@@ -3,3 +3,4 @@
 *.img
 *.apk
 /.idea
+*.pyc

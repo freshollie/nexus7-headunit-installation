@@ -14,6 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+
+# BEWARE, THIS WILL FLASH TWRP ASWELL
+
 fastboot flash bootloader bootloader-flo-flo-04.08.img
 fastboot reboot-bootloader
 sleep 5

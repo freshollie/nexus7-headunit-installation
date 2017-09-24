@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="drawer_label_shadow" value="false" />
+    <string name="gesture_two_finger_scroll_up">Nova Settings$#Intent;action=android.intent.action.MAIN;launchFlags=0x14880000;component=com.teslacoilsw.launcher/.preferences.SettingsActivity;end</string>
+    <boolean name="auto_add_shortcuts" value="false" />
+    <string name="drawer_animation">CIRCLE_CARD</string>
+    <string name="desktop_height_margin">SMALL</string>
+    <int name="desktop_grid_cols" value="9" />
+    <int name="desktop_label_color" value="-1" />
+    <boolean name="dock_overlay" value="false" />
+    <int name="drawer_transparency" value="128" />
+    <string name="dock_height">LARGE</string>
+    <boolean name="desktop_indicator_drawerdock_swipe" value="true" />
+    <boolean name="dock_canChangeFillMode" value="false" />
+    <string name="home_button_intent">Show Previews$#Intent;action=com.teslacoilsw.launcher.ACTION;launchFlags=0x10000000;component=com.teslacoilsw.launcher/.NovaShortcutHandler;S.LAUNCHER_ACTION=SHOW_PREVIEWS;end</string>
+    <string name="drawer_scroll_effect">CARDSTACK</string>
+    <boolean name="dock_enable" value="false" />
+    <string name="dock_width_margin">NONE</string>
+    <int name="drawer_app_grid_rows" value="5" />
+    <string name="desktop_scroll_indicator">NONE</string>
+    <string name="screen_orientation">UNSPECIFIED</string>
+    <boolean name="dock_label_shadow" value="true" />
+    <string name="folder_background">CIRCLE_WHITE</string>
+    <boolean name="desktop_label_single_line" value="true" />
+    <boolean name="drawer_cards" value="true" />
+    <string name="desktop_width_margin">NONE</string>
+    <string name="notification_bar_hide_clock">DISABLED</string>
+    <int name="drawer_app_grid_land_cols" value="6" />
+    <int name="folder_label_color" value="-13421773" />
+    <string name="desktop_icon_font">sans-serif-condensed</string>
+    <string name="gesture_two_finger_scroll_down">App Drawer$#Intent;action=com.teslacoilsw.launcher.ACTION;launchFlags=0x10000000;component=com.teslacoilsw.launcher/.NovaShortcutHandler;S.LAUNCHER_ACTION=APP_DRAWER;end</string>
+    <int name="dock_label_color" value="-1" />
+    <string name="drawer_style">VERTICAL</string>
+    <int name="desktop_grid_rows" value="9" />
+    <int name="drawer_icon_size" value="100" />
+    <boolean name="drawer_show_labels" value="true" />
+    <int name="drawer_card_color" value="-526345" />
+    <int name="desktop_scroll_indicator_color" value="-1" />
+    <boolean name="dock_autoclose" value="false" />
+    <boolean name="night_mode_auto_searchbar" value="true" />
+    <string name="folder_label_font_family">sans-serif-condensed</string>
+    <boolean name="widget_overlap" value="false" />
+    <int name="drawer_fastscroll_color" value="-2734810" />
+    <string name="dock_label_font_family">sans-serif-condensed</string>
+    <boolean name="desktop_lock" value="true" />
+    <int name="preference_version" value="53000" />
+    <string name="qsb_style">CLASSIC_MONO:ROUNDRECT:#FFFFFFFF:56</string>
+    <string name="backup_location">DOC</string>
+    <set name="drawer_menu_action_set">
+        <string>SEARCH</string>
+        <string>MENU</string>
+    </set>
+    <boolean name="qsb_enabled" value="false" />
+    <long name="theme_icon_pack_last_update_time" value="0" />
+    <string name="wallpaper_scrolling">ON</string>
+    <boolean name="dock_show_shadow" value="false" />
+    <int name="drawer_app_grid_cols" value="5" />
+    <string name="activity_animation">SYSTEM</string>
+    <boolean name="okgoogle" value="true" />
+    <string name="novawidget_qsb_style">L</string>
+    <string name="gesture_pinch_out">Recent Apps$#Intent;action=com.teslacoilsw.launcher.ACTION;launchFlags=0x10000000;component=com.teslacoilsw.launcher/.NovaShortcutHandler;S.LAUNCHER_ACTION=SHOW_RECENT_APPS;end</string>
+    <boolean name="night_mode_auto_folder" value="true" />
+    <int name="drawer_background_helper" value="-526345" />
+    <boolean name="dock_canChangeColor" value="true" />
+    <string name="dock_fillmode">REPEAT</string>
+    <boolean name="dock_infinite_scroll" value="false" />
+    <int name="folder_window_color" value="-318767105" />
+    <boolean name="drawer_enable_tabs" value="false" />
+    <boolean name="folder_favorites_show_label" value="true" />
+    <boolean name="dock_show_divider" value="true" />
+    <boolean name="drawer_predictive_apps" value="true" />
+    <boolean name="home_button_action_default_page_only" value="true" />
+    <string name="desktop_label_font_family">sans-serif-condensed</string>
+    <string name="scroll_speed">NOVA</string>
+    <string name="night_mode">AUTO</string>
+    <int name="drawer_label_color" value="-16777216" />
+    <boolean name="folder_label_shadow" value="false" />
+    <boolean name="dock_styled" value="false" />
+    <string name="drawer_tab_style">COLORBLOCK</string>
+    <string name="animation_speed">NOVA</string>
+    <string name="scroll_effect">SIMPLE</string>
+    <boolean name="notification_bar_transparency" value="true" />
+    <boolean name="desktop_grid_subgrid" value="true" />
+    <boolean name="drawer_user_reset" value="true" />
+    <int name="first_install_version" value="33000" />
+    <boolean name="widget_overlap_when_placing" value="false" />
+    <boolean name="drawer_join_tabs" value="true" />
+    <string name="desktopCellSize">66 105 106 58</string>
+    <long name="0" value="1499178807879" />
+    <int name="workspace_screen_count" value="1" />
+    <boolean name="aggressive_desktop" value="false" />
+    <boolean name="show_notification_bar" value="true" />
+    <boolean name="desktop_label_shadow" value="true" />
+    <boolean name="desktop_infinite_scroll" value="false" />
+    <int name="theme_holo_color" value="-1" />
+    <boolean name="widgets_in_drawer" value="true" />
+    <boolean name="drawer_autoclose" value="false" />
+    <int name="desktop_icon_size" value="100" />
+    <string name="dockCellSize">86 94 94 75</string>
+    <boolean name="drawer_swipe_from_dock" value="true" />
+    <boolean name="did_quickstart" value="true" />
+    <int name="app_icon_size" value="100" />
+    <string name="system_build_prop_md5">f72b7c8878554e315af879f3e4a6df43</string>
+    <string name="gesture_swipe_down">Expand Notifications$#Intent;action=com.teslacoilsw.launcher.ACTION;launchFlags=0x10000000;component=com.teslacoilsw.launcher/.NovaShortcutHandler;S.LAUNCHER_ACTION=EXPAND_STATUS_BAR;end</string>
+    <string name="dock_shape">PLATFORM</string>
+    <boolean name="desktop_show_labels" value="true" />
+    <boolean name="night_mode_auto_drawer" value="true" />
+    <boolean name="drawer_folders_before_apps" value="true" />
+    <int name="dock_grid_cols" value="7" />
+    <string name="folder_animation">CIRCLE</string>
+    <string name="folder_preview">STACK</string>
+    <boolean name="night_mode_auto_drawer_icon" value="true" />
+    <boolean name="dock_show_label" value="false" />
+    <float name="desktop_label_size_sp" value="13.0" />
+    <int name="dock_icon_size" value="100" />
+    <boolean name="drawer_pull_to_search" value="true" />
+    <int name="dock_alpha" value="255" />
+    <int name="folder_icon_size" value="100" />
+    <string name="gesture_pinch">Show Previews$#Intent;action=com.teslacoilsw.launcher.ACTION;launchFlags=0x10000000;component=com.teslacoilsw.launcher/.NovaShortcutHandler;S.LAUNCHER_ACTION=SHOW_PREVIEWS;end</string>
+    <boolean name="night_mode_location" value="true" />
+    <boolean name="dock_use_small_icons" value="false" />
+    <boolean name="sanify_icon_size" value="false" />
+    <string name="long_menu_intent">Search$#Intent;action=com.teslacoilsw.launcher.ACTION;launchFlags=0x10000000;component=com.teslacoilsw.launcher/.NovaShortcutHandler;S.LAUNCHER_ACTION=TEXT_SEARCH;end</string>
+    <int name="drawer_app_grid_land_rows" value="4" />
+    <int name="wallpaper_scrolling_asus_max_size" value="-1" />
+    <int name="system_dpi" value="320" />
+    <string name="allapps_locale">en_US</string>
+    <boolean name="drawer_persistent_search" value="true" />
+    <boolean name="favorites_show_label" value="true" />
+    <string name="colorpickeropt.recent_colors">-526345,-16737844</string>
+    <boolean name="drawer_infinite_scroll" value="false" />
+    <string name="drawer_label_font_family">sans-serif-condensed</string>
+    <int name="drawer_background_color" value="-2147444276" />
+    <int name="dock_color" value="-13388315" />
+    <boolean name="resize_all_widgets" value="true" />
+    <boolean name="root_helper" value="false" />
+</map>

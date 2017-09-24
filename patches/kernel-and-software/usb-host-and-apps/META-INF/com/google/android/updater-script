@@ -1,0 +1,69 @@
+show_progress(1.34, 1);
+
+# Extract new kernel image
+package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+
+# mount system
+run_program("/sbin/mount", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
+
+# Remove unneeded apps to free some space
+delete_recursive("/system/app/Books");
+delete_recursive("/system/app/PlayGames");
+delete_recursive("/system/app/Drive");
+
+# Delete the old PEM Apps
+delete("/system/app/PowerEventMgr.apk");
+delete("/system/priv-app/VCam.apk");
+delete("/system/app/VCam.apk");
+delete("/system/app/VCam2.apk");
+delete("/system/lib/libImageProc.so");
+delete("/system/vendor/easycap.ko");
+
+# Install PEM app
+package_extract_file("pem/PowerEventMgr.apk", "/system/app/PowerEventMgr.apk");
+package_extract_file("pem/powerdown.jpg", "/system/powerdown.jpg");
+package_extract_file("pem/powerup.jpg", "/system/powerup.jpg");
+package_extract_file("pem/powerdown.mp4", "/sdcard/powerdown.mp4");
+package_extract_file("pem/excludeCreatorPackagesFromSoftEvents", "/data/excludeCreatorPackagesFromSoftEvents");
+
+# Install PEM settings
+delete_recursive("/data/data/org.timur.powereventmgr");
+delete_recursive("/data/user/0/org.timur.powereventmgr");
+package_extract_dir("pem/org.timur.powereventmgr","/data/user/0/org.timur.powereventmgr");
+set_perm(0, 0, 0666, "/data/excludeCreatorPackagesFromSoftEvents");
+set_perm_recursive(0, 0, 0777, 0666, "/data/user/0/org.timur.powereventmgr");
+
+# Install reverse camera drivers
+package_extract_file("vcam/VCam2.apk", "/sdcard/VCam2.apk");
+package_extract_file("vcam/VCam2.apk", "/data/VCam2.apk");
+package_extract_file("vcam/saa7115.ko", "/system/vendor/saa7115.ko");
+package_extract_file("vcam/stk1160.ko", "/system/vendor/stk1160.ko");
+package_extract_file("vcam/usbtv.ko", "/system/vendor/usbtv.ko");
+
+# All these apps have data if they need to
+# Install launcher
+delete_recursive("/data/data/com.teslacoilsw.launcher");
+delete_recursive("/data/user/0/com.teslacoilsw.launcher");
+
+package_extract_file("launcher/NovaLauncher.apk", "/system/app/NovaLauncher.apk");
+
+package_extract_file("launcher/wallpaper/wallpaper", "/data/system/users/0/wallpaper");
+package_extract_file("launcher/wallpaper/wallpaper_info.xml", "/data/system/users/0/wallpaper_info.xml");
+set_perm(0, 0, 0666, "/data/system/users/0/wallpaper");
+set_perm(0, 0, 0666, "/data/system/users/0/wallpaper_info.xml");
+
+# Install Autobright
+delete_recursive("/data/data/com.autobright.kevinforeman.autobright");
+delete_recursive("/data/user/0/com.autobright.kevinforeman.autobright");
+package_extract_dir("autobright/com.autobright.kevinforeman.autobright","/data/user/0/com.autobright.kevinforeman.autobright");
+package_extract_file("autobright/AutoBright.apk", "/system/app/AutoBright.apk");
+set_perm_recursive(0, 0, 0777, 0666, "/data/user/0/com.autobright.kevinforeman.autobright");
+
+# Install UsbGps4Droid
+package_extract_file("usbgps4droid/UsbGps4Droid.apk","/system/app/UsbGps4Droid.apk");
+
+# Install HeadunitController
+package_extract_file("headunitcontroller/AndroidHeadunitController.apk","/system/app/AndroidHeadunitController.apk");
+
+# unmount system
+run_program("/sbin/unmount", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");

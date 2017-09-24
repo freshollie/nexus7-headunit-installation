@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="persist.sys.use_adb_network">1</string>
+    <string name="persist.sys.use_firm_sleep">1</string>
+    <string name="persist.sys.use_fcharge_host">1</string>
+    <string name="persist.sys.use_wakeup_osd">0</string>
+    <string name="persist.sys.use_suspend_osd">0</string>
+    <string name="savedScreenBrightness">0.0625</string>
+    <string name="persist.sys.deviceSuspBatt">100</string>
+    <string name="persist.sys.deviceSuspend">gone</string>
+</map>
