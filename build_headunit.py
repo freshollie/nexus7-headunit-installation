@@ -271,8 +271,5 @@ def fresh_installation_wizard():
     adb_wait_for_device()
     raw_input("Headunit built")
 
-#adb_reboot_recovery()
-#adb_wait_for_device()
-#install_packages()
+    
 fresh_installation_wizard()
-#disable_packages()
