@@ -1,8 +1,8 @@
 wget -O apks/radio.apk https://github.com/freshollie/monkeyboard-radio-android/raw/master/app/build/outputs/apk/app-debug.apk 
 
-wget -O patches/kernel-and-software/usb-host-and-apps/usbgps4droid/UsbGps4Droid.apk https://github.com/freshollie/UsbGps4Droid/raw/master/app/build/outputs/apk/app-debug.apk
+wget -O apks/UsbGps4Droid.apk https://github.com/freshollie/UsbGps4Droid/raw/master/app/build/outputs/apk/app-debug.apk
 
-wget -O patches/kernel-and-software/usb-host-and-apps/headunitcontroller/AndroidHeadunitController.apk https://github.com/freshollie/AndroidHeadunitController/raw/master/app/build/outputs/apk/app-debug.apk
+wget -O apks/AndroidHeadunitController.apk https://github.com/freshollie/AndroidHeadunitController/raw/master/app/build/outputs/apk/app-debug.apk
 
 wget -O recovery/twrp-3.1.1-0-flo.img https://eu.dl.twrp.me/flo/twrp-3.1.1-0-flo.img
 

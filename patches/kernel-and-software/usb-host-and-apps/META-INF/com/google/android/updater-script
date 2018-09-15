@@ -59,11 +59,5 @@ package_extract_dir("autobright/com.autobright.kevinforeman.autobright","/data/u
 package_extract_file("autobright/AutoBright.apk", "/system/app/AutoBright.apk");
 set_perm_recursive(0, 0, 0777, 0666, "/data/user/0/com.autobright.kevinforeman.autobright");
 
-# Install UsbGps4Droid
-package_extract_file("usbgps4droid/UsbGps4Droid.apk","/system/app/UsbGps4Droid.apk");
-
-# Install HeadunitController
-package_extract_file("headunitcontroller/AndroidHeadunitController.apk","/system/app/AndroidHeadunitController.apk");
-
 # unmount system
 run_program("/sbin/unmount", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");

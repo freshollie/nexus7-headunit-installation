@@ -78,6 +78,10 @@ def disable_lockscreen():
     os.system("adb shell mkdir /data/system/lock_old")
     os.system("adb shell mv /data/system/locksettings* /data/system/lock_old")
 
+	
+def disable_nfc():
+	os.system("svc nfc disable")
+	
 
 def disable_sounds():
     os.system("adb shell settings put system sound_effects_enabled 0")
@@ -115,8 +119,9 @@ def unlock_screen():
 
 
 def install_packages():
+	# installs all apks in the apks folder and grants all permissions
     for apk in os.listdir("apks"):
-        os.system("adb install " + "apks/" + apk);
+        os.system("adb install -g" + "apks/" + apk)
 
 
 def push_patch_files():
@@ -243,6 +248,12 @@ def fresh_installation_wizard():
 
     print("Setting up GPS driver")
     enable_gps_driver()
+	
+	print("Disabling nfc")
+	disable_nfc()
+	
+	print("Enabling always awake")
+	enable_always_awake()
 
     os.system("adb root")
 
