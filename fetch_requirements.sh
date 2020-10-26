@@ -1,8 +1,8 @@
-wget -O apks/radio.apk https://github.com/freshollie/monkeyboard-radio-android/raw/master/app/build/outputs/apk/app-debug.apk 
+curl -s https://api.github.com/repos/freshollie/monkeyboard-radio-android/releases/latest | grep "apk" | cut -d '"' -f 4 | wget -i - -O apks/radio.apk
 
-wget -O apks/UsbGps4Droid.apk https://github.com/freshollie/UsbGps4Droid/raw/master/app/build/outputs/apk/app-debug.apk
+curl -s https://api.github.com/repos/freshollie/UsbGps4Droid/releases/latest | grep "apk" | cut -d '"' -f 4 | wget -i - -O apks/UsbGps4Droid.apk
 
-wget -O apks/AndroidHeadunitController.apk https://github.com/freshollie/AndroidHeadunitController/raw/master/app/build/outputs/apk/app-debug.apk
+curl -s https://api.github.com/repos/freshollie/headunit-controller-android/releases/latest | grep "apk" | cut -d '"' -f 4 | wget -i - -O apks/AndroidHeadunitController.apk
 
 wget -O recovery/twrp-3.1.1-0-flo.img https://eu.dl.twrp.me/flo/twrp-3.1.1-0-flo.img
 
@@ -12,8 +12,12 @@ wget -O razor-mob30x.zip https://dl.google.com/dl/android/aosp/razor-mob30x-fact
 unzip razor-mob30x.zip
 rm razor-mob30x.zip
 
-gplaycli -d com.teslacoilsw.launcher com.spotify.music au.com.shiftyjelly.pocketcasts -p
-mv com.teslacoilsw.launcher.apk patches/usb-host-and-apps/launcher/NovaLauncher.apk
+gplaydl configure
+gplaydl download --packageId com.teslacoilsw.launcher 
+gplaydl download --packageId com.spotify.music 
+gplaydl download --packageId au.com.shiftyjelly.pocketcasts
+
+mv com.teslacoilsw.launcher.apk patches/kernel-and-software/usb-host-and-apps/launcher/NovaLauncher.apk
 mv com.spotify.music.apk apks/
 mv au.com.shiftyjelly.pocketcasts.apk apks/
 

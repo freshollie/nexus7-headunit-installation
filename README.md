@@ -11,7 +11,7 @@ This repository contains a script to automatically patch my nexus 7 tablet to be
 
 ## Instructions
 
-1. `sudo pip3 install gplaycli` 
+1. `sudo pip3 install gplaydl` 
 2. `./fetch_requirements.sh`
 3. Ensure tablet is connected
 4. `python build_headunit.py`
