@@ -1,4 +1,5 @@
 import os
+import sys
 import subprocess
 import time
 
@@ -54,7 +55,7 @@ def pull_thirdparty_apks():
         os.makedirs("apks")
         
     for package in THIRDPARTY:
-        location = subprocess.check_output("adb shell pm path " + package + " | sed -e 's/^package://'", shell=True).strip()
+        location = str(subprocess.check_output("adb shell pm path " + package + " | sed -e 's/^package://'", shell=True)).strip()
         os.system("adb pull " + location + " apks/" + package + ".apk")
 
 
@@ -121,7 +122,7 @@ def unlock_screen():
 def install_packages():
 	# installs all apks in the apks folder and grants all permissions
     for apk in os.listdir("apks"):
-        os.system("adb install -g" + "apks/" + apk)
+        os.system("adb install -g " + "apks/" + apk)
 
 
 def push_patch_files():
@@ -167,9 +168,12 @@ def adb_reboot_recovery():
 def adb_wait_for_device():
     while True:
         try:
-            if subprocess.check_output("adb shell echo test", shell=True, stderr=FNULL).startswith("test"):
+            output = subprocess.check_output("adb shell echo test", shell=True, stderr=FNULL).decode(sys.stdout.encoding)
+            print(output)
+            if output.startswith("test"):
                 break
-        except:
+        except Exception as e:
+            print(e)
             pass
 
         time.sleep(0.5)
@@ -178,6 +182,10 @@ def adb_wait_for_device():
 
 def fastboot_boot_recovery():
     os.system("fastboot boot recovery/twrp-3.1.1-0-flo.img")
+
+
+def enable_power_on_charge():
+    os.system("fastboot oem off-mode-charge 0")
 
 
 def flash_recovery():
@@ -200,7 +208,7 @@ def flash_root():
 ######### Installation wizard ############
 def fresh_installation_wizard():
     os.system("sudo echo")
-    raw_input("Please follow instructions exactly. Boot the device, enable developer tools, and press enter to start")
+    input("Please follow instructions exactly. Boot the device, enable developer tools, and press enter to start")
 
     adb_reboot_bootloader()
 
@@ -209,9 +217,9 @@ def fresh_installation_wizard():
 
     print("Installing OS")
     flash_os()
-
+    
     print("-------------------------------------------")
-    raw_input("Installation complete, please follow device installation process, enable developer tools, and press enter when complete")
+    input("Installation complete, please follow device installation process, enable developer tools, and press enter when complete")
 
     compile_patch_files()
     print("Copying files to device")
@@ -221,22 +229,24 @@ def fresh_installation_wizard():
     print("Flashing and booting into recovery")
     flash_recovery()
     fastboot_boot_recovery()
-
+    
     adb_wait_for_device()
+    time.sleep(10)
 
     print("Flashing headunit files")
     flash_software_and_kernel()
     flash_root()
     adb_reboot_system()
-
+    
     print("Flash complete")
     adb_wait_for_device()
 
-    raw_input("Press enter when os booted")
+    input("Press enter when os booted")
 
     print("-------------------------------------------")
     print("Starting software install")
 
+    
     print("Installing apps")
     install_packages()
 
@@ -249,12 +259,13 @@ def fresh_installation_wizard():
     print("Setting up GPS driver")
     enable_gps_driver()
 	
-	print("Disabling nfc")
-	disable_nfc()
+    
+    print("Disabling nfc")
+    disable_nfc()
 	
-	print("Enabling always awake")
-	enable_always_awake()
-
+    print("Enabling always awake")
+    enable_always_awake()
+    
     os.system("adb root")
 
     print("Disabling unneeded packages")
@@ -271,7 +282,7 @@ def fresh_installation_wizard():
 
     print("Unlocking screen")
     unlock_screen()
-
+    
     print("Setting up launcher")
     push_launcher_settings()
 
@@ -280,7 +291,6 @@ def fresh_installation_wizard():
     adb_reboot_system()
     
     adb_wait_for_device()
-    raw_input("Headunit built")
-
+    input("Headunit built")
     
 fresh_installation_wizard()
